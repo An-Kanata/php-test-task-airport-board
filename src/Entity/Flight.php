@@ -39,7 +39,7 @@ class Flight
 
     public function calculateDurationMinutes(): int
     {
-        return $this->calculateMinutesFromStartDay($this->toTime) - $this->calculateMinutesFromStartDay($this->fromTime);
+        return $this->calculateMinutesFromStartDay($this->toTime) - $this->calculateMinutesFromStartDay($this->fromTime) ;
     }
 
     private function calculateMinutesFromStartDay(string $time): int

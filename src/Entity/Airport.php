@@ -7,12 +7,14 @@ class Airport
     private string $code;
     private string $name;
     private string $city;
+    private string $timeZone;
 
-    public function __construct(string $code, string $name, string $city)
+    public function __construct(string $code, string $name, string $city, string $timeZone )
     {
         $this->code = $code;
         $this->name = $name;
         $this->city = $city;
+        $this->timeZone = str_replace('GMT', '', $timeZone);
     }
 
     public function getCode(): string

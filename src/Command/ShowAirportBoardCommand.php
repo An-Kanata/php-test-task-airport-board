@@ -45,7 +45,6 @@ class ShowAirportBoardCommand extends Command
         $this->showMessageAboutDocker();
 
         $flights = $this->flightRepository->getAll();
-
         $this->showTotalInformation($flights);
         $this->showFlightInformation($flights);
 
