@@ -100,8 +100,10 @@ class ShowAirportBoardCommand extends Command
                 return [
                     '#' => $rowIndex++,
                     'from' => $this->buildAirportTitle($flight->getFromAirport()),
+                    'from date' => $flight->getFromDate(),
                     'from time' => $flight->getFromTime(),
                     'to' => $this->buildAirportTitle($flight->getToAirport()),
+                    'to date' => $flight->getToDate(),
                     'to time' => $flight->getToTime(),
                     'duration' => new DurationHumanFormatter($flight->calculateDurationMinutes()),
                 ];
@@ -115,10 +117,11 @@ class ShowAirportBoardCommand extends Command
     private function buildAirportTitle(Airport $airport): string
     {
         return sprintf(
-            '%s (%s, %s)',
+            '%s (%s, %s, GMT%s)',
             $airport->getCity(),
             $airport->getName(),
-            $airport->getCode()
+            $airport->getCode(),
+            $airport->getTimeZone()
         );
     }
 

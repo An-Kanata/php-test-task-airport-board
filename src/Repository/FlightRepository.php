@@ -11,6 +11,7 @@ class FlightRepository extends AbstractRepository
     private const TO_DATA_KEY = 'to';
     private const AIRPORT_DATA_KEY = 'airport';
     private const TIME_DATA_KEY = 'time';
+    private const DATE_DATA_KEY = 'date';
 
     private JsonParser $jsonParser;
     private AirportRepository $airportRepository;
@@ -46,8 +47,11 @@ class FlightRepository extends AbstractRepository
         return new Flight(
             $this->airportRepository->getAirport($fromData[self::AIRPORT_DATA_KEY]),
             $fromData[self::TIME_DATA_KEY],
+            $fromData[self::DATE_DATA_KEY],
             $this->airportRepository->getAirport($toData[self::AIRPORT_DATA_KEY]),
-            $toData[self::TIME_DATA_KEY]
+            $toData[self::TIME_DATA_KEY],
+            $toData[self::DATE_DATA_KEY]
+
         );
     }
 }
