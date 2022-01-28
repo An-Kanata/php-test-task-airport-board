@@ -39,7 +39,11 @@ class Flight
 
     public function calculateDurationMinutes(): int
     {
-        return $this->calculateMinutesFromStartDay($this->toTime) - $this->calculateMinutesFromStartDay($this->fromTime) ;
+        $to = $this->calculateMinutesFromStartDay($this->toTime) - intval($this->toAirport->getTimeZone())*60;
+        $from = $this->calculateMinutesFromStartDay($this->fromTime) - intval($this->fromAirport->getTimeZone())*60;
+        while ($to < $from) {$to += 1440;} //добавляем сутки если время прилёта меньше времени вылета
+        $time = $to - $from;
+        return $time;
     }
 
     private function calculateMinutesFromStartDay(string $time): int

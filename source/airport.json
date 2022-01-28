@@ -24,15 +24,15 @@
     "timeZone": "GMT+07"
   },
   {
-    "code": "NAN",
-    "name": "Нанди",
-    "city": "Нанди",
-    "timeZone": "GMT+12"
-  },
-  {
     "code": "LAX",
     "name": "Лос‑Анджелес",
     "city": "Лос‑Анджелес",
     "timeZone": "GMT-08"
+  },
+  {
+    "code": "NAN",
+    "name": "Нанди",
+    "city": "Нанди",
+    "timeZone": "GMT+12"
   }
 ]

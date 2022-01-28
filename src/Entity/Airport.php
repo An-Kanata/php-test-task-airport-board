@@ -31,4 +31,9 @@ class Airport
     {
         return $this->city;
     }
+
+    public function getTimeZone(): string
+    {
+        return $this->timeZone;
+    }
 }
